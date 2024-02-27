@@ -1,17 +1,17 @@
 //binaria recursiva
 function binariaRescursiva(arr, x, inicio, fin) {
   let medio = 0;
-  if (fin < inicio) {
+  if (fin < inicio) { //el numero no esta en el conjunto de datos
     return -1;
   } else {
-    medio = Math.trunc((inicio + fin) / 2);
-    if (x > arr[medio]) {
-      return binariaRescursiva(arr, x, medio + 1, fin);
+    medio = Math.trunc((inicio + fin) / 2); //obtenemos el medio ded nuestro conjunto de datos
+    if (x > arr[medio]) { //si nuestro numero es mayor a la mitad del arreglo
+      return binariaRescursiva(arr, x, medio + 1, fin); //llamamos a la fn pero actualizamos los valores, haciendo uso de la recursividad
     } else {
-      if (x < arr[medio]) {
-        return binariaRescursiva(arr, x, inicio, medio - 1);
+      if (x < arr[medio]) {//si nuestro numero es menor a la mitad del arreglo
+        return binariaRescursiva(arr, x, inicio, medio - 1); //llamamos a la fn pero actualizamos los valores, haciendo uso de la recursividad
       } else {
-        return medio;
+        return medio; //si nada se cumple estoy en el numero a buscar
       }
     }
   }
@@ -33,15 +33,15 @@ let arr = [
     121, 122, 123, 124, 125, 126, 127, 128, 129, 130,
     131, 132, 133, 134, 135, 136, 137, 138, 139, 140,
     141, 142, 143, 144, 145, 146, 147, 148, 149, 150,
-    151, 152, 153, 154, 155, 156, 157, 158, 159, 160,
-    161, 162, 163, 164, 165, 166, 167, 168, 169, 170,
-    171, 172, 173, 174, 175, 176, 177, 178, 179, 180,
-    181, 182, 183, 184, 185, 186, 187, 188, 189, 190,
     191, 192, 193, 194, 195, 196, 197, 198, 199, 200
-];
-let x = 11;
-let inicio = 0;
-let fin = arr.length - 1;
-console.time("binariaRescursiva");
-console.log(binariaRescursiva(arr, x, inicio, fin));
-console.timeEnd("binariaRescursiva");
+]; //conjunto de datos, pueden ser modificados pero siempre trendran que estar en orden asc
+let x = 11; //numero a buscar en el arreglo de datos
+let inicio = 0; //declaramos el inicio de nuestro arreglo
+let fin = arr.length - 1; //declaramos el final de nuestro arreglo
+console.time("binariaRescursiva"); //funcion para iniciar un temporizador de la ejecucion (van a poder ver cuanto tarda)
+console.log(binariaRescursiva(arr, x, inicio, fin)); //llamado a la fn busqueda binaria recusriva que recibe el conjunto de datos, el numero a buscar, el inicio y el final
+console.timeEnd("binariaRescursiva"); //imprimimos  el tiempo que tomo la busqueda binaria recursiva
+
+
+//si tenes alguna duda subi un video a youtube donde explico detalladamente el uso de este algoritmo
+//link al video https://www.youtube.com/watch?v=oxnQJUJwTrk&t=14s :)
